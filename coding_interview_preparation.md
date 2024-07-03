@@ -302,7 +302,7 @@ import numpy as np
 mass = np.linspace(1.0, 10.0, num=100)
 velocity = np.linspace(1.0, 10.0, num=100)
 
-# Показанный вариант более быстрый.
+# Показанный вариант более быстрый
 kinetic_energy = 0.5 * (mass * np.power(velocity, 2))
 ```
 
@@ -433,7 +433,7 @@ func (p Point) getEuclideanDistance(q Point) float64 {
 
 func main() {
     result := Point{17, 22}.getEuclideanDistance(Point{36, 72})
-    fmt.Println((result - 53.488) < 0.001)
+    fmt.Println(math.Abs(result - 53.488) < 0.001)
 }
 ```
 
@@ -542,4 +542,166 @@ func main() {
 }
 ```
 
+### Как написать формулу сигмоиды для логистической регрессии?
+
+```go
+func sigmoid(x float64) float64 {
+    return 1.0 / (1 + math.Exp(-x))
+}
+```
+
+## JavaScript
+
+### Как написать простую библиотеку для закона Ома?
+
+```javascript
+const volts = (amperes, ohms) => amperes * ohms;
+
+const amperes = (volts, ohms) => volts / ohms;
+
+const ohms = (volts, amperes) => volts / amperes;
+
+const watts = (volts, amperes) => volts * amperes;
+
+const voltageDivider = (volts, r1, r2) => volts * (r2 / (r1 + r2));
+
+
+module.exports = {
+    volts: volts,
+    amperes: amperes,
+    ohms: ohms,
+    watts: watts,
+    voltageDivider: voltageDivider
+};
+```
+
+## Bash
+
+### Как создать директорию?
+
+```bash
+mkdir example
+```
+
+### Как рекурсивно скопировать директорию?
+
+```bash
+cp -r ./example ./example_2
+```
+
+### Как посмотреть содержимое директории?
+
+```bash
+ls -ltrah
+```
+
+### Как записать текст в файл?
+
+```bash
+cat << EOF > example.txt
+EXAMPLE
+EOF
+```
+
+### Как узнать свободное место на диске?
+
+```bash
+df -h
+```
+
+### Как посмотреть память? (свободное место)
+
+```bash
+free -h
+```
+
+### Как посмотреть процессы?
+
+```bash
+ps -A
+```
+
+### Как загрузить файл?
+
+```bash
+curl -o example_1.html --user-agent "Bot" https://example.com/
+```
+
+### Как загрузить файл?
+
+```bash
+wget -O example_2.html -U "Bot" https://example.com/
+```
+
+### Как посмотреть содержимое файла?
+
+```bash
+cat example_1.html | less
+```
+
+### Как увидеть первые 5 строк?
+
+```bash
+head 5 example_1.html
+```
+
+### Как увидеть крайние 5 строк?
+
+```bash
+tail 5 example_1.html
+```
+
+### Как посчитать количество строк, слов и байт?
+
+```bash
+wc example_1.html
+```
+
+### Как определить контрольную сумму?
+
+```bash
+md5sum example_1.html
+```
+
+### Как определить контрольную сумму?
+
+```bash
+sha1sum example_1.html
+```
+
+### Как найти в файле подстроку?
+
+```bash
+grep -r "<title>" *
+```
+
+### Как искать файлы по расширению?
+
+```bash
+find ./ -iname "*.html"
+```
+
+### Как создать архив?
+
+```bash
+tar -cvzf example.tar.gz ./
+```
+
+### Как извлечь файлы из архива?
+
+```bash
+tar -xvzf example.tar.gz -C ./
+```
+
+### Как зашифровать файл?
+
+```bash
+gpg -c example.tar.gz
+```
+
+### Как расшифровать файл?
+
+```bash
+gpg -d example.tar.gz.gpg > example-copy.tar.gz
+```
 
