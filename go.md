@@ -196,12 +196,12 @@ type RequestData struct {
 }
 
 // Далее формируются правила валидации.
-// В некоторых проектах добавляют целый набор 
-// экспертных правил на этап валидации. 
-// Или даже подключают модели, например, 
+// В некоторых проектах добавляют целый набор
+// экспертных правил на этап валидации.
+// Или даже подключают модели, например,
 // логистическую регрессию или простые деревья.
 func Validate(arr []float64) error {
-    if len(arr) < 5 {
+	if len(arr) < 5 {
 		return fmt.Errorf("len(arr) < 5 (len = %d)", len(arr))
 	}
 	for _, x := range arr {
@@ -216,7 +216,7 @@ func Validate(arr []float64) error {
 // Как правило, самая большая и сложная часть.
 // Часто оформляют как библиотеку с набором функций.
 // В реальных системах математические модули пишут
-// через TDD (test-driven development) с очень 
+// через TDD (test-driven development) с очень
 // подробным набором unit-тестов.
 func Example(arr []float64) []float64 {
 	result := make([]float64, len(arr))
@@ -228,10 +228,10 @@ func Example(arr []float64) []float64 {
 
 // Вместо этого кода ваш шаблон (скелет) микросервиса для расчётов.
 func main() {
-    var raw []byte = []byte(`{"example": [1, 2, 4, 50, -54, -99]}`)
+	var raw []byte = []byte(`{"example": [1, 2, 4, 50, -54, -99]}`)
 	var data RequestData
 	err := json.Unmarshal(raw, &data)
-    if err != nil {
+	if err != nil {
 		fmt.Println("JSON Decode", err)
 		return
 	}
@@ -243,5 +243,4 @@ func main() {
 	fmt.Println("result", Example(data.Example))
 }
 ```
-
 
